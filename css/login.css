@@ -26,7 +26,7 @@
 }
 
 .login__input{
-    border: 2px solid #333 ;
+    border: 2px solid #333;
     border-radius: 8px;
     color: #333;
     font-size: 1em;
@@ -45,6 +45,13 @@
     cursor: pointer;
     font-size: 1em;
     max-width: 300px;
-    padding: 15px;
+    padding: 15px; 
     width: 100%;
+}
+
+.login__button:disabled{
+    background-color: #eee;
+    color: #aaa;
+    cursor: auto;
+
 }
