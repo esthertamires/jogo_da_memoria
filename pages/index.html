@@ -7,6 +7,11 @@
     
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/login.css">
+
+    <script defer src="/js/login.js"></script>
+
+<!-- defer serve para adiar o carregamento do js Isso ajuda a evitar bloqueios no carregamento da página,-->
+
     <title>Jogo da Memoria</title>
 </head>
 <body>
@@ -14,10 +19,10 @@
     <form class="login__form">
         <div class="login__header">
             <img src="/imagens/brain.png" alt="brain icon" class="">
-            <h1>Memory Game</h1>
+            <h1>Jogo da Memoria</h1>
         </div>
         <input type="text" placeholder="name" class="login__input">
-        <button type="submit" class="login__button">Play</button>
+        <button type="submit" class="login__button" disabled>Play</button>
 
     </form>
     
