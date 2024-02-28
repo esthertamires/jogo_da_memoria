@@ -29,7 +29,6 @@
 }
 
 .front {
-    background-image: url('../imagens/Raze_icon.png');
     transform: rotateY(180deg);
 }
 
