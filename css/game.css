@@ -37,7 +37,8 @@
     backface-visibility: hidden;
 }
 
-.card:hover{
+
+.revela-card{
     transform: rotateY(180deg); /* o card gira em 180 graus */
 }
 

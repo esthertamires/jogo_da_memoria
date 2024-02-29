@@ -19,6 +19,11 @@ const createElement = (tag, className) =>{
     return element; //retornando o elemento
 }
 
+const revealCard = ([ target ]) => {
+    target.parentNode.classList.add('revela-card');
+
+}
+
 //cria a carta
 
 const createCard = (personagens) => {
@@ -27,23 +32,33 @@ const createCard = (personagens) => {
     const front = createElement('div', 'face front');
     const back = createElement('div', 'face back');
 
-    front.style.backgroundImage = `url('../imagens/${personagens}.png')`
+    front.style.backgroundImage = `url('../imagens/${personagens}.png')` //adicionando as imagens nos cards
 
 
     card.appendChild(front); //appendChild  adiciona um filho na div card
     card.appendChild(back);
+
+    card.addEventListener('click', revealCard);
 
     return card;
 }
 
 const loadGame = () => {
 
+    const personagensDuplicados = [ ... personagens, ... personagens]; // duplicando as cartas
+
+    const embarralharArray = personagensDuplicados.sort(() => Math.random() - 0.5);
+
     //vai criar as cards
-    personagens.forEach((personagens) => {
+    embarralharArray.forEach((personagens) => {
+
         const card = createCard(personagens);
         grid.appendChild(card);
+
     });
 
 }
+
+
 
 loadGame();
