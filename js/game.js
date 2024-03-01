@@ -19,9 +19,8 @@ const createElement = (tag, className) =>{
     return element; //retornando o elemento
 }
 
-const revealCard = ([ target ]) => {
-    target.parentNode.classList.add('revela-card');
-
+const revealCard = ({ target }) => {
+    target.parentNode.classList.add('reveal-card');
 }
 
 //cria a carta

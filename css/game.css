@@ -37,8 +37,7 @@
     backface-visibility: hidden;
 }
 
-
-.revela-card{
+.reveal-card{
     transform: rotateY(180deg); /* o card gira em 180 graus */
-}
 
+}
