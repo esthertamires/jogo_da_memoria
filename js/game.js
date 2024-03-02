@@ -19,8 +19,30 @@ const createElement = (tag, className) =>{
     return element; //retornando o elemento
 }
 
+let fristCard = '';
+let secondCard = '';
+const checkCards = () => {
+    
+}
+
 const revealCard = ({ target }) => {
-    target.parentNode.classList.add('reveal-card');
+
+    if (target.parentNode.className.includes('reveal-card')){
+        return;
+    }
+
+    if (fristCard == ''){
+        target.parentNode.classList.add('reveal-card');
+        fristCard = target.parentNode;
+
+    } else if (secondCard == '') {
+        target.parentNode.classList.add('reveal-card');
+        secondCard = target.parentNode;
+
+        checkCards();
+    }
+
+
 }
 
 //cria a carta
@@ -38,6 +60,7 @@ const createCard = (personagens) => {
     card.appendChild(back);
 
     card.addEventListener('click', revealCard);
+    card.setAttribute('data-character',personagens)
 
     return card;
 }
