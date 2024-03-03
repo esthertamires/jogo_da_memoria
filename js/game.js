@@ -21,7 +21,25 @@ const createElement = (tag, className) =>{
 
 let fristCard = '';
 let secondCard = '';
+
 const checkCards = () => {
+    const fristPersonagem = fristCard.getAttribue('data-personagem');
+    const secondPersonagem = secondCard.getAttribue('data-personagem');
+
+    if ( fristPersonagem === secondPersonagem){
+
+
+
+    } else {
+
+        setTimeout(() =>{ 
+
+        fristCard.classList.remove('reveal-card');
+
+        secondCard.classList.remove('reveal-card');
+
+        }, 500);
+    }
     
 }
 
@@ -31,11 +49,11 @@ const revealCard = ({ target }) => {
         return;
     }
 
-    if (fristCard == ''){
+    if (fristCard === ''){
         target.parentNode.classList.add('reveal-card');
         fristCard = target.parentNode;
 
-    } else if (secondCard == '') {
+    } else if (secondCard === '') {
         target.parentNode.classList.add('reveal-card');
         secondCard = target.parentNode;
 
@@ -60,7 +78,7 @@ const createCard = (personagens) => {
     card.appendChild(back);
 
     card.addEventListener('click', revealCard);
-    card.setAttribute('data-character',personagens)
+    card.setAttribute('data-personagem',personagens)
 
     return card;
 }
