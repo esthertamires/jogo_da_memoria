@@ -1,5 +1,6 @@
 const grid = document.querySelector('.grid'); // para selecionar uma classe é necessario adicionar um ponto "."
 const spanPlayer = document.querySelector('.player');
+const timer = document.querySelector('.timer');
 
 const personagens = [ 
     'Reyna',
@@ -28,8 +29,9 @@ const checkEndGame = () => {
     const disabledCards = document.querySelectorAll('.disabled-card');
 
     if (disabledCards.length == 20){ 
-       setTimeout(() => {
-        alert('Parabens, você venceu !')
+        clearInterval(this.loop);
+        setTimeout(() => {
+        alert(`Parabens, ${spanPlayer.innerHTML} você venceu ! Seu tempo foi: ${timer.innerHTML} segundos`)
        }, 500);;
     }
 }
@@ -124,11 +126,22 @@ const loadGame = () => {
 
 }
 
+const starTime = () =>{
+
+    this.loop = setInterval(() => {
+        const currentTime = +timer.innerHTML;
+        timer.innerHTML = currentTime + 1;
+
+
+    }, 1000);
+
+}
+
+
 window.onload = () => {
-
-    const playerName = localStorage.getItem('.player');
-
-    spanPlayer.innerHTML = playerName
+ 
+    spanPlayer.innerHTML = localStorage.getItem('player');
+    starTime();
 
     loadGame();
 }
