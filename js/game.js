@@ -1,4 +1,5 @@
 const grid = document.querySelector('.grid'); // para selecionar uma classe é necessario adicionar um ponto "."
+const spanPlayer = document.querySelector('.player');
 
 const personagens = [ 
     'Reyna',
@@ -123,6 +124,11 @@ const loadGame = () => {
 
 }
 
+window.onload = () => {
 
+    const playerName = localStorage.getItem('.player');
 
-loadGame();
+    spanPlayer.innerHTML = playerName
+
+    loadGame();
+}
